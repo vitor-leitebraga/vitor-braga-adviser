@@ -5,10 +5,10 @@
 > I also used Laravel JetStream as a starting point utilizing the Inertia stack.
 
 1. [Access](#access)
-2. [Setup Instructions](#setup-instructions).
+2. [Setup Instructions](#setup-instructions)
 3. [Time Spent](#time-spent)
-4. [Technical Decisions](#technical-decisions).
-5. [Improvements](#improvements).
+4. [Technical Decisions](#technical-decisions)
+5. [Improvements](#improvements)
 6. [Running Tests](#running-tests)
 
 ## Access
