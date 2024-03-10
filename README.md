@@ -30,7 +30,7 @@ This product is using Laravel Vapor, a serverless solution for deployment in AWS
 Clone this repository:
 
 ```
-git clone git@github.com:vitor-leitebraga/vitor-braga-adviser.git
+git clone https://github.com/vitor-leitebraga/vitor-braga-adviser.git
 cd vitor-braga-adviser
 ```
 
