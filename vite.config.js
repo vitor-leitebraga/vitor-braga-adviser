@@ -17,4 +17,10 @@ export default defineConfig({
             },
         }),
     ],
+    resolve: {
+        alias: {
+            "@": "/resources/js/",
+            "ziggy-js": "/vendor/tightenco/ziggy",
+        },
+    },
 });
