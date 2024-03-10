@@ -107,7 +107,7 @@ fields to try to minimize the requests to server.
   * Reusing form components, applying validation, creating the request to server.
 - (2h) Creating Prospection Form server validation and business logic 
   * Includes the FormRequest validation, interfaces, repositories and services.
-- (2h) Creating some Feature Tests and Unit Tests 
+- (2h) Creating some Feature Tests
 - (3h) Improving Layout 
 - (2h) Documentation 
 
