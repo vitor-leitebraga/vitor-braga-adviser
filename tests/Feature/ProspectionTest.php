@@ -2,7 +2,6 @@
 
 
 use Illuminate\Foundation\Testing\RefreshDatabase;
-use Inertia\Testing\AssertableInertia;
 use Tests\TestCase;
 
 class ProspectionTest extends TestCase
@@ -34,19 +33,6 @@ class ProspectionTest extends TestCase
         $response = $this->get('/insurance');
         $response->assertStatus(200);
     }
-
-	//Not working when we are not running npm run dev
-	//Couldn't figure why
-//	public function test_prospection_being_created_correctly(): void
-//	{
-//		$this->post('/insurance', $this->formData)
-//			->assertInertia( fn(AssertableInertia $page) => $page
-//				->component('Prospection/ProspectionDone')
-//				->has('consumer')
-//				->has('address')
-//				->has('prospection')
-//			);
-//	}
 
 	public function test_missing_personal_data_in_prospection_form(): void
 	{

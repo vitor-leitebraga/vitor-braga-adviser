@@ -8,7 +8,7 @@
 2. [Setup Instructions](#setup-instructions)
 3. [Time Spent](#time-spent)
 4. [Technical Decisions](#technical-decisions)
-5. [Improvements](#improvements)
+5. [Ideas](#ideas)
 6. [Running Tests](#running-tests)
 
 ## Access
@@ -131,13 +131,12 @@ clients, I can apply the same ClientAddress to both.
 - The logic of reusing a Consumer is currently considering all the fields, to facilitate, but the intention was to take 
 into consideration the e-mail field, for example, and use the consumer data instead of creating a whole new Consumer,
 again, to prevent duplicated data.
-- Despite not being a huge fan of using Repositories when I can rely on Eloquent and it's Models, I created them just to show
-that I understand that, sometimes (almost never), we will make a huge change between ORMs that will justify its usage.
+- I used Repositories, even having Eloquent and it's Models which I believe it's enough, but I wanted to 
+demonstrate that I'm able to work with it.
 
-## Improvements
+## Ideas
 
-Because of time restriction, I was not able to do all the things I wanted. Following there's a list of some items, just 
-for the sake of information:
+The below list have some ideas for future improvements: 
 
 - Use the e-mail field to load the Consumer data, if already used this form previously.
 - Change the layout left image to match only the categories selected in the first step
