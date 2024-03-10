@@ -1,6 +1,7 @@
 <template>
 	<div
-		class="flex flex-col justify-center items-center w-fit h-full bg-primary/20 rounded-xl cursor-pointer text-center group hover:bg-primary/40"
+		class="flex flex-col justify-center items-center w-fit h-full bg-primary/20 rounded-xl cursor-pointer
+			text-center group hover:bg-primary/40"
 		@click="selectItem"
 	>
 		<div class="flex bg-black w-full rounded-t-lg text-white text-2xl justify-center p-2 min-h-16 items-center">
@@ -48,10 +49,6 @@ const props = defineProps({
 	name: {
 		type: String,
 		default: ""
-	},
-	icon: {
-		type: Object,
-		default: () => {}
 	},
 	image: {
 		type: String,

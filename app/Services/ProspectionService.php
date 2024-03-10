@@ -11,7 +11,7 @@ class ProspectionService
 	{
 	}
 
-	public function createProspectionData(array $prospectionForm, int $consumerId, int $clientAddressId): array
+	public function prepareData(array $prospectionForm, int $consumerId, int $clientAddressId): array
 	{
 		return [
 			'consumer_id' => $consumerId,

@@ -7,6 +7,7 @@ use App\Services\ClientAddressService;
 use App\Services\ConsumerService;
 use App\Services\ProspectionService;
 use Inertia\Inertia;
+use Inertia\Response;
 
 class ProspectionController extends Controller
 {
@@ -17,26 +18,26 @@ class ProspectionController extends Controller
 	)
 	{}
 
-    public function index()
+    public function index(): Response
     {
 		return Inertia::render('Prospection/Index');
     }
 
-    public function store(ConsumerProspectionRequest $request)
+    public function store(ConsumerProspectionRequest $request): Response
     {
 		$prospectionFormData = $request->validated();
 
-		$consumerData = $this->consumerService->filterConsumerDataFromProspectionForm($prospectionFormData);
+		$consumerData = $this->consumerService->prepareData($prospectionFormData);
 		$consumer = $this->consumerService->getConsumerOrCreateNew($consumerData);
 
-		$addressData = $this->clientAddressService->filterAddressDataFromProspectionForm($prospectionFormData);
+		$addressData = $this->clientAddressService->prepareData($prospectionFormData);
 		$address = $this->clientAddressService->getAddressOrCreateNew($addressData);
 
-		$this->consumerService->attachAddressToConsumerIfNeeded($consumer, [$address->id]);
+		$this->consumerService->syncAddressData($consumer, [$address->id]);
 
-		$prospectionData = $this->prospectionService->createProspectionData($prospectionFormData, $consumer->id, $address->id);
+		$prospectionData = $this->prospectionService->prepareData($prospectionFormData, $consumer->id, $address->id);
 		$prospection = $this->prospectionService->create($prospectionData);
 
-		return Inertia::render('Prospection/Done', compact('consumer', 'address', 'prospection'));
+		return Inertia::render('Prospection/ProspectionDone', compact('consumer', 'address', 'prospection'));
     }
 }

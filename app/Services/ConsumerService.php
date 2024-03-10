@@ -11,7 +11,7 @@ class ConsumerService
 	{
 	}
 
-	public function filterConsumerDataFromProspectionForm(array $prospectionForm): array
+	public function prepareData(array $prospectionForm): array
 	{
 		return [
 			'first_name' => $prospectionForm['firstname'],
@@ -27,7 +27,7 @@ class ConsumerService
 		return $this->consumerRepository->getConsumerOrCreateNew($consumerData);
 	}
 
-	public function attachAddressToConsumerIfNeeded(Consumer $consumer, array $clientAddressIds): void
+	public function syncAddressData(Consumer $consumer, array $clientAddressIds): void
 	{
 		$this->consumerRepository->syncAddresses($consumer, $clientAddressIds);
 	}

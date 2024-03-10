@@ -58,15 +58,19 @@ const checkAndSubmitData = async () => {
 const submitData = () => {
 	prospectionStore.getForm().post(route("prospection.store"), {
 		onError: () => {
-			const personalFormFields = ["firstname", "lastname", "email", "phone", "contact_preference"]
-			const hasPersonalFormErrors = personalFormFields.some((item) => {
-				return Object.prototype.hasOwnProperty.call(usePage().props.errors, item)
-			})
-			if(hasPersonalFormErrors){
-				prospectionStore.goToPreviousStep()
-			}
+			organizeErrorsAndRedirectUser()
 		}
 	})
+}
+
+const organizeErrorsAndRedirectUser = () => {
+	const personalFormFields = ["firstname", "lastname", "email", "phone", "contact_preference"]
+	const hasPersonalFormErrors = personalFormFields.some((item) => {
+		return Object.prototype.hasOwnProperty.call(usePage().props.errors, item)
+	})
+	if(hasPersonalFormErrors){
+		prospectionStore.goToPreviousStep()
+	}
 }
 
 </script>

@@ -29,7 +29,6 @@
 
 <script setup>
 import ItemSelector from "@/Components/ItemSelector.vue";
-import { faHouse, faGear, faMotorcycle } from "@fortawesome/free-solid-svg-icons";
 import {useProspectionStore} from "@/Stores/ProspectionStore.js";
 import ProspectionFormLayout from "@/Layouts/ProspectionFormLayout.vue";
 import {useAsset} from "@/Composables/useAsset.js";
@@ -37,9 +36,9 @@ import {useAsset} from "@/Composables/useAsset.js";
 const prospectionStore = useProspectionStore()
 
 const categories = [
-	{id: 1, name: "Home", icon: faHouse, image: "consumer_form/home.png"},
-	{id: 2, name: "Auto", icon: faGear, image: "consumer_form/auto.png"},
-	{id: 3, name: "Recreational Vehicle", icon: faMotorcycle, image: "consumer_form/recreational.png"},
+	{id: 1, name: "Home", image: "consumer_form/home.png"},
+	{id: 2, name: "Auto", image: "consumer_form/auto.png"},
+	{id: 3, name: "Recreational Vehicle", image: "consumer_form/recreational.png"},
 ]
 
 const selectCategory = (categoryName) => {

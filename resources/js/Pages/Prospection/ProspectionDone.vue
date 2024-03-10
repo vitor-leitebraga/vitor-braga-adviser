@@ -31,9 +31,7 @@ import { faCircleCheck } from "@fortawesome/free-solid-svg-icons";
 import {Link} from "@inertiajs/vue3"
 import { route } from "ziggy-js";
 
-const prospectionStore = useProspectionStore()
-
 onMounted(() => {
-	prospectionStore.setCurrentStep(steps.length)
+	useProspectionStore().setCurrentStep(steps.length)
 })
 </script>

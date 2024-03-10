@@ -11,7 +11,7 @@ class ClientAddressService
 	{
 	}
 
-	public function filterAddressDataFromProspectionForm(array $prospectionForm): array
+	public function prepareData(array $prospectionForm): array
 	{
 		return [
 			'address' => $prospectionForm['address'],

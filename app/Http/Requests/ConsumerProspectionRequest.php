@@ -7,7 +7,6 @@ use Illuminate\Validation\Rule;
 
 class ConsumerProspectionRequest extends FormRequest
 {
-	//TODO: Auth::check()
     public function authorize(): bool
     {
         return true;
